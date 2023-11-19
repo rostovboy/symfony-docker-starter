@@ -45,3 +45,26 @@ docker exec -it symfony_docker-php-fpm /bin/sh
 composer require --dev symfony/maker-bundle
 
 php bin/console list make
+
++++++++++++++++++++++++++++++++++++++++++++++
+
+create .editorconfig
+
+paste from https://github.com/symfony/symfony/blob/v6.3.8/.editorconfig
+
+install linters:
+
+
+docker exec -it symfony_docker-php-fpm /bin/sh
+
+composer require --dev friendsofphp/php-cs-fixer
+
+run fix: ./vendor/bin/php-cs-fixer fix
+
+
+composer require --dev phpstan/phpstan
+
+So, for example if you have your classes in directories src and tests, you can run PHPStan like this:
+
+vendor/bin/phpstan analyse src tests
+
