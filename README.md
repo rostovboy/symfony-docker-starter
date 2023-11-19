@@ -33,3 +33,15 @@ docker exec -it symfony_docker-php-fpm /bin/sh
 composer require debug
 
 to run profiler go to url http://localhost:8000/_profiler
+
+++++++++++++++++++++++++++++++++++++++++++++++
+
+https://symfony.com/bundles/SymfonyMakerBundle/current/index.html
+
+install maker-bundle
+
+docker exec -it symfony_docker-php-fpm /bin/sh
+
+composer require --dev symfony/maker-bundle
+
+php bin/console list make
